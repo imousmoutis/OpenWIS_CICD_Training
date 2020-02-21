@@ -1,18 +1,39 @@
 language: java
 jdk: openjdk11
+
 addons:
   sonarcloud:
     organization: imousmoutis
     token:
       secure: xDleEtTPfPbi7Kk4UMtGoFnLbn5zJT965fbeLMOnzl9XSTpZNG7XlD4eqPjQAa4l3XXqvmt/dMvxyFEJfnDDZXTO1sE2VyeTEJ16HspQIu6S3NoBjoT7hHM/dZEY1vCQHh9VnuPDinhoxDBORh5XHM4dQnSeSUxTSFN+iluq0/bK6ZUJwBApllC1l03FPRZc/8IzI3E1i6l5tCrxLslQ0G/1Nu3RhpTn8yRJmvUKr94yvmSjHrtDkcNf0oKC2A0zRE14lVZUp3YjKQxBfGLkYrEs9EdUAO2b/CI+nAWq6vprhIPwpFrB2K16NmbY858/hY3xbHCgcHKQP6bpZ92YcwziOm3Cjsg7RUMLX1w+Aa2LWOsN/UjHqWvL1uR8lONJSoeIBaELs7hvdt5JVMutKaRZKY54lDlPzHc8KNF7JpbXt2PSO4neYfKZjBMFJ0d2QqEdAB6LdMS38N7SBL1ZeAKkYNrc5AmfpnCwlbME3Vsp9TxfDzCcMMaB5VwzOQ7qvXc7h36IbgOjeueHMzxyjfGGFDgZ/NwYbDn0UnNIsWBivEdwbntEAQLVoH8IaNy5TRQmmXZ+mJnxLSKRUvRHdhZEYtSRde1dl1IC4x+/tYZOhaPy9GYe4osnfxfnwxqPEEa9tLaRSm28E5wxhEwjKGp8v/RoROplLpPv3s6kdtE=
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_6b326569245e_key -iv $encrypted_6b326569245e_iv
   -in travis_key.enc -out travis_key -d
 - chmod +x mvnw
+
 script:
 - ./mvnw clean install sonar:sonar -Dsonar.projectKey=imousmoutis_OpenWIS_CICD_Training
+
 env:
   global:
   - secure: XeD0qMbZ4NUtcGpLlwC0oF1JBBxBcdqEZgbS376pcsoSo8FD9aB8zc6fCBanayeCNaaUWSrYGqwstVLS4+II6IDKBi7ultGhvJZM7TehR43XDLXduUJzr7xC5xIvKSdCSfWEBmXmkAG7RSyRS1/I97wD8/1lWziu63UBBMc4HAY3UYx9QlslKXGSehU9nKRNXF7e1Xhszhi8Jf2JNJMmWj4O03GZSvWOr7t6TjnmtDIrV0ianP+tynfpl3hs1L9LN7RZvFkjsFHaZ5LZrBh593vJHAhMHARO8qWtJ3lQk9W5sxex6Uq50+gYC1OMEZP8SoUObID57tlEhAKTk5Hp1iOHXeNFWEDO9d//dOmloB4p8BqwDeNDVmChJDkIKrcc/5kCIehYrFuYArjByjUJL5WbKAFTHlu1VsME9UtdWwWs0x/bIJ+cd4Q/HMHKRV4Jftj9KhFAkvu59DA01cIheoCbTalZmIzISTAIq+fewC5eOFl3Urwn8Kws3D7gjyqAE42fmcYgBxdJQUZeY6N15G52GeWSpo44pEDPS5dVeuVmG/Cj39sLBwhY6W8Mz6sw+v49neY5j87HVqLhtdvtkb5tuNeNrvN34gC61nqWX9a3G8kE25/JGtFEiRMM0iMtle6idDJQeCTEC2LXwVoh9Li79uuH79BciTWCmfBDQFM=
   - secure: VR+DB1yC2t3SImSypV2165QeLvQg5S34Igs2Xuk4twdHqo5Jt4c2RZauvQNwv7W4oL21s3NfHTDoYTxevcTNmtAZhpnShmxwd4vWtmXEN6BWgXGDLxoIIlqS6lYTKrwCgIvlIlrxCHIJ0GQ8otCL5ZCdy7qhoxUzH8nJPJ0y/ReobR1afRwaKzW3NOf8UKiFasWfV85YtKApXOVRTdtmoTRqwS3J5Ifje7jF9rWYjTSnxe5QvI5jaza47eeytWR9YEYkUERyeUD9citv+UTzLzg+WyQnPP8Y35YGVK1xTB0xsqW1HBU8fbvtkEfGJXQB0xxuF+HRkzav5B4xbUccMY3uDCeO6cbw5m/MtEtZA/8zD0F668Dh4k9Stmnm0hKNo+hBH7PrjyVrB4bAXbtPCsWa8dmWMh5lmoWKSXvYCyASn7qIfJ9LNrkDutYb4w0g/Z9ceSlFSro94Wx2xFwtuXyxoRNBShcDSLsABRLLJKc9crIu2XLK7DbqlxQAZ6wpeEEiynuvWwRvnUSdH7cfM/KH5ocOA1RQeukQ3+O9gB4tsSmyqfT7OkB9PO8zy7M4qtU66Ekcs+srntzMaa2Sx7oofJt8Wevlrmqw+uUy5EM6nvaOMcdahBOmU7KWSouLGdKGzFvrvpJClPjGBCWzYViN5NwEmJyEGTtO9v+ud04=
   - secure: Fe9IRcVBku2jfQbko5wiOW5vRiX1e+skzcnnCSINqJP1zUqTCggVrW/zjKp7lnQk5ALHx4ln9mPJEjI/7QLvyX/J0rze6C0TN/8JYfnqOHO77OX/ZVklHMxwi6I35VBgeYDVMvN+0ETpXtQlTleGHJUdD86XIA2KcTam6ER5LVzSWaNmqCyMwEdqYDai+a0jMiRU9MYet3ILHTQP5MyXNsA2dQ488yoH4dhyzdwuG3hnQaqjIabVmeu+vnEMQJkJvnfuYC2LNt7uyyC7A0hPWSrnYWmGeS7QPGEkLNvGcB/w4pejKbWZeSABMbrN2uQhl/h+eTyN/Z/zkZ1OnNNl0U8etEzyDfSvzUcywKjemO1pIW2FswYgPVblALwBbCBD98+VkoG6xsO4zD/KfyC0Bzk+EQkFYlsDag8xu+lA8E4pZR8cR0sEUTqzqwagEENNi4DwS+rEGhTxWGLkKlRKuKE3DTeqB1r6wvyVo8WgXHNZsedBIf+8bqwn9fh+EgOrr3hk1+1e4jum8/OORYdZ1bj+N5LWgqK4PRkOp3gpUH6Mmu5Oq10YBUob6K+lcf25kPiuLBqDkyK/d5hQ+E9i2UdMNNPVyziCgnvCA10rX4lfw/LUZk0Lf14oCOFH0Z3XBtQv3V2u8Ji3NeAQX5TJMscHN3dskCTRpjVFmtd7xtw=
+
+deploy:
+  - provider: script
+    skip-cleanup: true
+    script: rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/target/cicd-example-*.jar ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/start.sh ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: start.sh
+    on:
+      branch: master
