@@ -18,5 +18,6 @@ deploy:
   script: >
     git checkout master &&
     ./mvnw --batch-mode release:prepare &&
+    echo "Release successfully performed"
   on:
     branch: master
