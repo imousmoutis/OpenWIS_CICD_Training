@@ -3,7 +3,7 @@ language: java
 jdk: openjdk11
 
 before_install:
-  - chmod +x mvnw
+  - openssl aes-256-cbc -K $encrypted_dfb724bdbf52_key -iv $encrypted_dfb724bdbf52_iv -in github_deploy_key.enc -out github_deploy_key -d
 
 script:
   - ./mvnw clean install
@@ -11,6 +11,8 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ./mvnw --batch-mode release:clean release:prepare
+  script: >
+    git checkout master &&
+    ./mvnw --batch-mode release:clean release:prepare
   on:
     branch: master
