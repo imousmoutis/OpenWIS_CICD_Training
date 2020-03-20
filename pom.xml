@@ -26,10 +26,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:https://github.com/imousmoutis/OpenWIS_CICD_Training.git</connection>
+    <connection>scm:git@github.com:imousmoutis/OpenWIS_CICD_Training.git</connection>
     <url>https://github.com/imousmoutis/OpenWIS_CICD_Training</url>
-    <developerConnection>scm:git:https://github.com/imousmoutis/OpenWIS_CICD_Training.git</developerConnection>
-    <tag>v1.0.0</tag>
+    <developerConnection>scm:git@github.com:imousmoutis/OpenWIS_CICD_Training.git</developerConnection>
   </scm>
 
   <dependencies>
