@@ -20,11 +20,18 @@
     <sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
     <dependency-check-maven.version>5.3.0</dependency-check-maven.version>
+    <maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
     <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml
     </sonar.dependencyCheck.reportPath>
     <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html
     </sonar.dependencyCheck.htmlReportPath>
   </properties>
+
+  <scm>
+    <connection>scm:git:https://github.com/imousmoutis/OpenWIS_CICD_Training.git</connection>
+    <url>https://github.com/imousmoutis/OpenWIS_CICD_Training</url>
+    <developerConnection>scm:git:https://github.com/imousmoutis/OpenWIS_CICD_Training.git</developerConnection>
+  </scm>
 
   <dependencies>
     <dependency>
@@ -113,6 +120,15 @@
           <configuration>
             <format>ALL</format>
             <failOnError>false</failOnError>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin.version}</version>
+          <configuration>
+            <tagNameFormat>v@{project.version}</tagNameFormat>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
           </configuration>
         </plugin>
       </plugins>
