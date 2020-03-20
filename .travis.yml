@@ -6,7 +6,7 @@ before_install:
   - chmod +x mvnw
 
 script:
-- ./mvnw clean install
+  - ./mvnw clean install
 
 deploy:
   provider: script
