@@ -12,7 +12,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script: >
-    git checkout master &&
-    ./mvnw --batch-mode release:clean release:prepare
+    - git checkout master
+    - ./mvnw --batch-mode release:prepare
   on:
     branch: master
