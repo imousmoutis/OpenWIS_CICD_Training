@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.openwis.cicd</groupId>
   <artifactId>cicd-example</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5-SNAPSHOT</version>
   <name>OpenWIS CICD Example</name>
   <description>Demo project for demonstrating the CICD procedure.</description>
 
@@ -29,7 +29,7 @@
     <url>https://github.com/imousmoutis/OpenWIS_CICD_Training</url>
     <connection>scm:git:ssh://git@github.com/imousmoutis/OpenWIS_CICD_Training.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/imousmoutis/OpenWIS_CICD_Training.git</developerConnection>
-    <tag>v1.0.4</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <dependencies>
