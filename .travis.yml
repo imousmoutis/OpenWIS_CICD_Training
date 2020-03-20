@@ -11,6 +11,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ./mvnw --batch-mode release:prepare
+  script: ./mvnw --batch-mode release:clean release:prepare
   on:
     branch: master
