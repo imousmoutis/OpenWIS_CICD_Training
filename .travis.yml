@@ -11,7 +11,7 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: >
+  script:
     - git checkout master
     - ./mvnw --batch-mode release:prepare
   on:
