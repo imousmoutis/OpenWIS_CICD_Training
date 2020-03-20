@@ -6,10 +6,4 @@ before_install:
   - chmod +x mvnw
 
 script:
-- ./mvnw clean install sonar:sonar -Dsonar.projectKey=imousmoutis_OpenWIS_CICD_Training
-
-addons:
-  sonarcloud:
-    organization: imousmoutis
-    token:
-      secure: xDleEtTPfPbi7Kk4UMtGoFnLbn5zJT965fbeLMOnzl9XSTpZNG7XlD4eqPjQAa4l3XXqvmt/dMvxyFEJfnDDZXTO1sE2VyeTEJ16HspQIu6S3NoBjoT7hHM/dZEY1vCQHh9VnuPDinhoxDBORh5XHM4dQnSeSUxTSFN+iluq0/bK6ZUJwBApllC1l03FPRZc/8IzI3E1i6l5tCrxLslQ0G/1Nu3RhpTn8yRJmvUKr94yvmSjHrtDkcNf0oKC2A0zRE14lVZUp3YjKQxBfGLkYrEs9EdUAO2b/CI+nAWq6vprhIPwpFrB2K16NmbY858/hY3xbHCgcHKQP6bpZ92YcwziOm3Cjsg7RUMLX1w+Aa2LWOsN/UjHqWvL1uR8lONJSoeIBaELs7hvdt5JVMutKaRZKY54lDlPzHc8KNF7JpbXt2PSO4neYfKZjBMFJ0d2QqEdAB6LdMS38N7SBL1ZeAKkYNrc5AmfpnCwlbME3Vsp9TxfDzCcMMaB5VwzOQ7qvXc7h36IbgOjeueHMzxyjfGGFDgZ/NwYbDn0UnNIsWBivEdwbntEAQLVoH8IaNy5TRQmmXZ+mJnxLSKRUvRHdhZEYtSRde1dl1IC4x+/tYZOhaPy9GYe4osnfxfnwxqPEEa9tLaRSm28E5wxhEwjKGp8v/RoROplLpPv3s6kdtE=
+- ./mvnw clean install
