@@ -2,3 +2,4 @@ target/
 .idea
 HELP.md
 cicd-example.iml
+test
