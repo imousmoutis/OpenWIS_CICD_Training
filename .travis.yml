@@ -15,9 +15,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: >
-    git checkout master &&
-    ./mvnw --batch-mode release:prepare &&
-    echo "Release successfully performed"
+  script: maven_release.sh
   on:
     branch: master
