@@ -6,4 +6,5 @@ git checkout master
 git fetch --all
 git checkout -b develop origin/develop
 git merge --no-edit --no-ff master
+git remote set-url origin git@github.com:imousmoutis/OpenWIS_CICD_Training.git
 git push -u origin develop
