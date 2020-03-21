@@ -15,6 +15,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: maven_release.sh
+  script: sh maven_release.sh
   on:
     branch: master
